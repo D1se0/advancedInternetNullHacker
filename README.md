@@ -1,113 +1,113 @@
-# Herramientas de Monitoreo y Seguridad en Red
+# Network Monitoring and Security Tools
 
-Este proyecto contiene dos herramientas diseñadas para monitorear y proteger tu `red local`. Una herramienta está basada en el monitoreo de direcciones **IP** y la otra en el monitoreo de **MACs**. Ambas herramientas funcionan con una lista de elementos permitidos que se definen en archivos de texto (`.txt`) específicos.
+This project contains two tools designed to monitor and protect your `local network`. One tool is based on monitoring **IP** addresses and the other on monitoring **MACs**. Both tools work with a list of allowed elements that are defined in specific text files (`.txt`).
 
-## Requisitos Previos
+## Prerequisites
 
-Antes de ejecutar estas herramientas, asegúrate de cumplir con los siguientes requisitos:
+Before running these tools, make sure you meet the following requirements:
 
-- **Linux** (preferiblemente basado en `Debian`, como `Kali Linux`).
+- **Linux** (preferably based on `Debian`, such as `Kali Linux`).
 
-- Herramientas instaladas:
+- Tools installed:
   - `arp-scan`
   - `arpspoof`
   - `Python 3`
 
-Puedes instalar `arp-scan` y `arpspoof` con el siguiente comando:
+You can install `arp-scan` and `arpspoof` with the following command:
 
 ```bash
 sudo apt-get install arp-scan dsniff
 ```
 
-## Herramientas Incluidas
+## Tools Included
 
-### 1. Herramienta Basada en IP
+### 1. IP Based Tool
 
-### Descripción
+### Description
 
-Esta herramienta monitorea las direcciones `IP` activas en tu `red local`. Detecta cualquier dirección `IP` desconocida (que no esté incluida en la lista permitida) y realiza un `ARP Spoofing` para desconectarla de la red.
+This tool monitors active `IP` addresses on your `local network`. Detects any unknown `IP` address (not included in the allowed list) and performs `ARP Spoofing` to disconnect it from the network.
 
-## Configuración
+## Configuration
 
-Crea un archivo llamado `permitted_ip.txt` en el mismo directorio del script.
-Agrega las direcciones `IP` permitidas, una por línea.
+Create a file called `permitted_ip.txt` in the same directory as the script.
+Add the allowed `IP` addresses, one per line.
 
-### Ejecución
+### Execution
 
-Ejecuta el script de la herramienta basada en `IP` con el siguiente comando:
+Run the `IP` based tool script with the following command:
 
 ```bash
 python3 advanceInternetNullHacker_IP.py
 ```
 
-Durante la ejecución, deberás ingresar la interfaz de red (por ejemplo, `wlan0` o `eth0`).
+During execution, you will need to enter the network interface (for example, `wlan0` or `eth0`).
 
-### 2. Herramienta Basada en MAC
+### 2. MAC Based Tool
 
-### Descripción
+### Description
 
-Esta herramienta monitorea las direcciones `MAC` activas en tu red local. Detecta cualquier dirección `MAC` desconocida (que no esté incluida en la lista permitida) y realiza un `ARP Spoofing` contra la `IP` asociada.
+This tool monitors active `MAC` addresses on your local network. Detects any unknown `MAC` address (not included in the allowed list) and performs `ARP Spoofing` against the associated `IP`.
 
-## Configuración
+## Configuration
 
-Crea un archivo llamado `permitted_mac.txt` en el mismo directorio del script.
-Agrega las direcciones `MAC` permitidas, una por línea.
+Create a file called `permitted_mac.txt` in the same directory as the script.
+Add the allowed `MAC` addresses, one per line.
 
-### Ejecución
+### Execution
 
-Ejecuta el script de la herramienta basada en `MAC` con el siguiente comando:
+Run the `MAC` based tool script with the following command:
 
 ```bash
 python3 advanceInternetNullHacker_MAC.py
 ```
 
-Durante la ejecución, deberás ingresar la interfaz de red (por ejemplo, `wlan0` o `eth0`).
+During execution, you will need to enter the network interface (for example, `wlan0` or `eth0`).
 
-Identificación de Dispositivos Activos: `knowARPHosts.sh`
+Active Device Identification: `knowARPHosts.sh`
 
-El script `knowARPHosts.sh` te permite identificar los dispositivos actualmente conectados a tu red local. Utiliza `arp-scan` para obtener una lista de las direcciones `IP` y `MAC` activas.
+The `knowARPHosts.sh` script allows you to identify the devices currently connected to your local network. Use `arp-scan` to get a list of active `IP` and `MAC` addresses.
 
-## Uso
+## Use
 
-Ejecuta el script con el siguiente comando:
+Run the script with the following command:
 
 ```bash
 bash knowARPHosts.sh
 ```
 
-Durante la ejecución, deberás ingresar la interfaz de red (por ejemplo, `wlan0` o `eth0`). Este script generará una lista de dispositivos conectados en formato:
+During execution, you will need to enter the network interface (for example, `wlan0` or `eth0`). This script will generate a list of connected devices in format:
 
 ```
-192.168.1.1     c0:3c:04:3f:63:60       Nombre del Fabricante
-192.168.1.2     00:11:22:33:44:55       Nombre del Fabricante
+192.168.1.1  c0:3c:04:3f:63:60  Manufacturer's Name
+192.168.1.2  00:11:22:33:44:55  Manufacturer Name
 ```
 
-Utiliza esta información para actualizar los archivos `permitted_ip.txt` y `permitted_mac.txt`.
+Use this information to update the `permitted_ip.txt` and `permitted_mac.txt` files.
 
-### Archivos de Configuración
+### Configuration Files
 
-`permitted_ip.txt`: Lista de direcciones `IP` permitidas. Cada dirección debe ir en una línea separada.
-`permitted_mac.txt`: Lista de direcciones `MAC` permitidas. Cada dirección debe ir en una línea separada.
+`permitted_ip.txt`: List of allowed `IP` addresses. Each address should go on a separate line.
+`permitted_mac.txt`: List of allowed `MAC` addresses. Each address must go on a separate line.
 
-Asegúrate de mantener estas listas actualizadas con las direcciones de tus dispositivos conocidos.
+Be sure to keep these lists up to date with the addresses of your known devices.
 
-## Notas Importantes
+## Important Notes
 
-Ambas herramientas ejecutan `ARP Spoofing` para desconectar dispositivos desconocidos. Esto podría ser detectado por sistemas de seguridad en redes más avanzadas.
-Usa estas herramientas de manera responsable y únicamente en `redes que administras`.
-Ejecuta los scripts con permisos de administrador (`sudo`) si encuentras problemas de permisos.
+Both tools run `ARP Spoofing` to disconnect unknown devices. This could be detected by more advanced network security systems.
+Use these tools responsibly and only on 'networks that you manage'.
+Run the scripts with administrator permissions (`sudo`) if you encounter permissions problems.
 
-### Ejemplo de Flujo de Trabajo
+### Workflow Example
 
-Ejecuta knowIP.sh para identificar los dispositivos actuales en tu red.
-Añade las direcciones IP o MAC detectadas en sus respectivos archivos (`permitted_ip.txt` o `permitted_mac.txt`).
-Ejecuta la herramienta correspondiente (por `IP` o por `MAC`).
-Monitorea el estado de los dispositivos conectados y desconecta aquellos desconocidos automáticamente.
+Run knowIP.sh to identify the current devices on your network.
+Add the detected IP or MAC addresses to their respective files (`permitted_ip.txt` or `permitted_mac.txt`).
+Run the corresponding tool (by `IP` or by `MAC`).
+Monitor the status of connected devices and disconnect unknown ones automatically.
 
-## Contacto
+## Contact
 
-Si tienes alguna duda o mejora para estas herramientas, no dudes en compartirla. ¡Disfruta de una red más segura!
+If you have any questions or improvements for these tools, do not hesitate to share them. Enjoy a more secure network!
 
-Creador: d1se0
+Creator: d1se0
 
-Contacto: ciberseguridad12345@gmail.com
+Contact: ciberseguridad12345@gmail.com
