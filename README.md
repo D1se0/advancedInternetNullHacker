@@ -46,7 +46,7 @@ Durante la ejecución, deberás ingresar la interfaz de red (por ejemplo, `wlan0
 
 ### Descripción
 
-Esta herramienta monitorea las direcciones MAC activas en tu red local. Detecta cualquier dirección MAC desconocida (que no esté incluida en la lista permitida) y realiza un ARP Spoofing contra la IP asociada.
+Esta herramienta monitorea las direcciones `MAC` activas en tu red local. Detecta cualquier dirección `MAC` desconocida (que no esté incluida en la lista permitida) y realiza un `ARP Spoofing` contra la `IP` asociada.
 
 ## Configuración
 
@@ -109,4 +109,5 @@ Monitorea el estado de los dispositivos conectados y desconecta aquellos descono
 Si tienes alguna duda o mejora para estas herramientas, no dudes en compartirla. ¡Disfruta de una red más segura!
 
 Creador: d1se0
+
 Contacto: ciberseguridad12345@gmail.com
