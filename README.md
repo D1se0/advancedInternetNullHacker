@@ -63,16 +63,16 @@ python3 advanceInternetNullHacker_MAC.py
 
 Durante la ejecución, deberás ingresar la interfaz de red (por ejemplo, `wlan0` o `eth0`).
 
-Identificación de Dispositivos Activos: `knowIP.sh`
+Identificación de Dispositivos Activos: `knowARPHosts.sh`
 
-El script `knowIP.sh` te permite identificar los dispositivos actualmente conectados a tu red local. Utiliza `arp-scan` para obtener una lista de las direcciones `IP` y `MAC` activas.
+El script `knowARPHosts.sh` te permite identificar los dispositivos actualmente conectados a tu red local. Utiliza `arp-scan` para obtener una lista de las direcciones `IP` y `MAC` activas.
 
 ## Uso
 
 Ejecuta el script con el siguiente comando:
 
 ```bash
-bash knowIP.sh
+bash knowARPHosts.sh
 ```
 
 Durante la ejecución, deberás ingresar la interfaz de red (por ejemplo, `wlan0` o `eth0`). Este script generará una lista de dispositivos conectados en formato:
